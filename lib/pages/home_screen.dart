@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:login_ekrani/utils/constants.dart';
+import 'package:login_ekrani/constants/assets.dart';
+import 'package:login_ekrani/constants/colors.dart';
+import 'package:login_ekrani/constants/strings.dart';
 import 'package:login_ekrani/utils/device_utils.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,11 +18,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constants.greenColor,
+      backgroundColor: AppColors.greenColor,
       body: Stack(children: [
         Padding(
           padding: const EdgeInsets.only(top: 40),
-          child: Image.asset("assets/cloth_faded.png",width: DeviceUtils.getScaledWidth(context, 1)),
+          child: Image.asset(AppAssets.homePageClothFadedAsset,
+              width: DeviceUtils.getScaledWidth(context, 1)),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -28,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Image.asset(
-                "assets/machine.png",
+                AppAssets.homePageMachineAsset,
                 width: DeviceUtils.getScaledWidth(context, 0.5),
                 height: DeviceUtils.getScaledHeight(context, 0.4),
               ),
@@ -38,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30)),
-                color: Constants.scaffoldBackgroundColor,
+                color: AppColors.scaffoldBackgroundColor,
               ),
               width: DeviceUtils.getScaledWidth(context, 1),
               height: DeviceUtils.getScaledHeight(context, 0.4),
@@ -50,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Welcome to Laundree!",
+                        AppStrings.homePageTitleText,
                         style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20)),
@@ -58,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: Text(
-                          "This is the first version of our laundry app. Please sign in or create an account below",
+                          AppStrings.homePageSubtitleText,
                           style: GoogleFonts.poppins(
                               textStyle: TextStyle(
                                   color: Colors.black.withOpacity(0.6))),
@@ -68,17 +71,17 @@ class _SplashScreenState extends State<SplashScreen> {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8)),
-                            primary: Constants.scaffoldBackgroundColor,
+                            primary: AppColors.scaffoldBackgroundColor,
                             fixedSize: Size(
                                 DeviceUtils.getScaledWidth(context, 1), 50),
                             elevation: 5,
                           ),
                           onPressed: () {},
                           child: Text(
-                            "Log In",
+                            AppStrings.homePageLoginButtonText,
                             style: GoogleFonts.poppins(
                                 textStyle: TextStyle(
-                                    color: Constants.greenColor,
+                                    color: AppColors.greenColor,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold)),
                           )),
@@ -86,17 +89,17 @@ class _SplashScreenState extends State<SplashScreen> {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8)),
-                            primary: Constants.greenColor,
+                            primary: AppColors.greenColor,
                             fixedSize: Size(
                                 DeviceUtils.getScaledWidth(context, 1), 50),
                             elevation: 0,
                           ),
                           onPressed: () {},
                           child: Text(
-                            "Create an Account",
+                            AppStrings.homePageCreateAnAccountText,
                             style: GoogleFonts.poppins(
                                 textStyle: TextStyle(
-                                    color: Constants.scaffoldBackgroundColor,
+                                    color: AppColors.scaffoldBackgroundColor,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold)),
                           )),

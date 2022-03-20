@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_ekrani/pages/splash_screen.dart';
+import 'package:login_ekrani/pages/login_screen.dart';
+import 'package:login_ekrani/pages/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

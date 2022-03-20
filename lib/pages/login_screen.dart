@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:login_ekrani/utils/constants.dart';
+import 'package:login_ekrani/constants/colors.dart';
 import 'package:login_ekrani/utils/device_utils.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constants.greenColor,
+      backgroundColor: AppColors.greenColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.arrow_back,
-                    color: Constants.scaffoldBackgroundColor)),
+                    color: AppColors.scaffoldBackgroundColor)),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 12),
@@ -34,13 +34,13 @@ class _LoginScreenState extends State<LoginScreen> {
               "Log in to your account",
               style: GoogleFonts.poppins(
                   textStyle: TextStyle(fontWeight: FontWeight.w600),
-                  color: Constants.scaffoldBackgroundColor,
+                  color: AppColors.scaffoldBackgroundColor,
                   fontSize: 17),
             ),
           ),
           Container(
             decoration: BoxDecoration(
-              color: Constants.scaffoldBackgroundColor,
+              color: AppColors.scaffoldBackgroundColor,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30), topRight: Radius.circular(30)),
             ),
