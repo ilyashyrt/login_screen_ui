@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:login_ekrani/constants/assets.dart';
 import 'package:login_ekrani/constants/colors.dart';
 import 'package:login_ekrani/constants/strings.dart';
+import 'package:login_ekrani/constants/text_styles.dart';
 import 'package:login_ekrani/utils/device_utils.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -54,17 +54,13 @@ class _SplashScreenState extends State<SplashScreen> {
                     children: [
                       Text(
                         AppStrings.homePageTitleText,
-                        style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
+                        style: AppTextStyles.homePageTitleTextStyle,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: Text(
                           AppStrings.homePageSubtitleText,
-                          style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                                  color: Colors.black.withOpacity(0.6))),
+                          style: AppTextStyles.homePageSubtitleTextStyle,
                         ),
                       ),
                       ElevatedButton(
@@ -79,11 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           onPressed: () {},
                           child: Text(
                             AppStrings.homePageLoginButtonText,
-                            style: GoogleFonts.poppins(
-                                textStyle: TextStyle(
-                                    color: AppColors.greenColor,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold)),
+                            style: AppTextStyles.homePageLoginButtonTextStyle,
                           )),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
@@ -97,11 +89,8 @@ class _SplashScreenState extends State<SplashScreen> {
                           onPressed: () {},
                           child: Text(
                             AppStrings.homePageCreateAnAccountText,
-                            style: GoogleFonts.poppins(
-                                textStyle: TextStyle(
-                                    color: AppColors.scaffoldBackgroundColor,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold)),
+                            style:
+                                AppTextStyles.homePageCreateAnAccountTextStyle,
                           )),
                     ],
                   ),
