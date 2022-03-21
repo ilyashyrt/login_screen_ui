@@ -6,22 +6,23 @@ import 'package:login_ekrani/constants/colors.dart';
 import 'package:login_ekrani/constants/strings.dart';
 import 'package:login_ekrani/constants/text_styles.dart';
 import 'package:login_ekrani/utils/device_utils.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SplashScreen extends StatefulWidget {
-  SplashScreen({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key? key}) : super(key: key);
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenColor,
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.only(top: 40),
+          padding: EdgeInsets.only(top: 40.w),
           child: Image.asset(AppAssets.homePageClothFadedAsset,
               width: DeviceUtils.getScaledWidth(context, 1)),
         ),
@@ -29,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.only(bottom: 20),
+              padding:  EdgeInsets.only(bottom: 20.w),
               child: Image.asset(
                 AppAssets.homePageMachineAsset,
                 width: DeviceUtils.getScaledWidth(context, 0.5),
@@ -39,15 +40,15 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30)),
+                    topLeft: Radius.circular(30.r),
+                    topRight: Radius.circular(30.r)),
                 color: AppColors.scaffoldBackgroundColor,
               ),
               width: DeviceUtils.getScaledWidth(context, 1),
               height: DeviceUtils.getScaledHeight(context, 0.4),
               child: Container(
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding:  EdgeInsets.all(20.w),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         style: AppTextStyles.homePageTitleTextStyle,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
+                        padding: EdgeInsets.only(bottom: 10.w),
                         child: Text(
                           AppStrings.homePageSubtitleText,
                           style: AppTextStyles.homePageSubtitleTextStyle,
@@ -66,10 +67,10 @@ class _SplashScreenState extends State<SplashScreen> {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)),
+                                borderRadius: BorderRadius.circular(8.r)),
                             primary: AppColors.scaffoldBackgroundColor,
                             fixedSize: Size(
-                                DeviceUtils.getScaledWidth(context, 1), 50),
+                                DeviceUtils.getScaledWidth(context, 1), 50.h),
                             elevation: 5,
                           ),
                           onPressed: () {},
@@ -80,10 +81,10 @@ class _SplashScreenState extends State<SplashScreen> {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)),
+                                borderRadius: BorderRadius.circular(8.r)),
                             primary: AppColors.greenColor,
                             fixedSize: Size(
-                                DeviceUtils.getScaledWidth(context, 1), 50),
+                                DeviceUtils.getScaledWidth(context, 1), 50.h),
                             elevation: 0,
                           ),
                           onPressed: () {},

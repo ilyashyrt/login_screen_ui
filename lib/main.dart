@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:login_ekrani/pages/login_screen.dart';
 import 'package:login_ekrani/pages/home_screen.dart';
 
@@ -11,13 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ScreenUtilInit(
+      minTextAdapt: true,
+      builder:() => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
       ),
-      home: SplashScreen(),
     );
   }
 }
