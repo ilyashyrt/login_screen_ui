@@ -9,6 +9,7 @@ import 'package:login_ekrani/constants/text_styles.dart';
 import 'package:login_ekrani/utils/device_utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:login_ekrani/widgets/elevated_button_widget.dart';
+import 'package:login_ekrani/widgets/textfield_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -66,17 +67,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: AppTextStyles.loginPageEmailAndPasswordTextStyle,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 10.r),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            focusedBorder: AppBorders.loginPageTextFieldsBorder,
-                            border: AppBorders.loginPageTextFieldsBorder,
-                            hintText:
-                                AppStrings.loginPageFirstTextFieldHintText,
-                            hintStyle:
-                                AppTextStyles.loginPageTextFieldsHintTextStyle),
-                      ),
-                    ),
+                        padding: EdgeInsets.only(top: 10.r),
+                        child: TextFieldWidget(
+                          hintText: AppStrings.loginPageFirstTextFieldHintText,
+                        )),
                     Padding(
                       padding: EdgeInsets.only(top: 25.r),
                       child: Text(
@@ -85,17 +79,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 10.r),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            focusedBorder: AppBorders.loginPageTextFieldsBorder,
-                            border: AppBorders.loginPageTextFieldsBorder,
-                            hintText:
-                                AppStrings.loginPageSecondTextFieldHintText,
-                            hintStyle:
-                                AppTextStyles.loginPageTextFieldsHintTextStyle),
-                      ),
-                    ),
+                        padding: EdgeInsets.only(top: 10.r),
+                        child: TextFieldWidget(
+                          hintText: AppStrings.loginPageSecondTextFieldHintText,
+                        )),
                     Padding(
                       padding: EdgeInsets.only(top: 10.r),
                       child: Row(
