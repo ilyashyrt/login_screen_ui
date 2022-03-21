@@ -3,10 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:login_ekrani/constants/assets.dart';
 import 'package:login_ekrani/constants/colors.dart';
+import 'package:login_ekrani/constants/routes.dart';
 import 'package:login_ekrani/constants/strings.dart';
 import 'package:login_ekrani/constants/text_styles.dart';
 import 'package:login_ekrani/utils/device_utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:login_ekrani/widgets/elevated_button_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -22,7 +24,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: AppColors.greenColor,
       body: Stack(children: [
         Padding(
-          padding: EdgeInsets.only(top: 40.w),
+          padding: EdgeInsets.only(top: 40.r),
           child: Image.asset(AppAssets.homePageClothFadedAsset,
               width: DeviceUtils.getScaledWidth(context, 1)),
         ),
@@ -30,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding:  EdgeInsets.only(bottom: 20.w),
+              padding: EdgeInsets.only(bottom: 20.r),
               child: Image.asset(
                 AppAssets.homePageMachineAsset,
                 width: DeviceUtils.getScaledWidth(context, 0.5),
@@ -48,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               height: DeviceUtils.getScaledHeight(context, 0.4),
               child: Container(
                 child: Padding(
-                  padding:  EdgeInsets.all(20.w),
+                  padding: EdgeInsets.all(20.w),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,41 +60,26 @@ class _HomePageState extends State<HomePage> {
                         style: AppTextStyles.homePageTitleTextStyle,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(bottom: 10.w),
+                        padding: EdgeInsets.only(bottom: 10.r),
                         child: Text(
                           AppStrings.homePageSubtitleText,
                           style: AppTextStyles.homePageSubtitleTextStyle,
                         ),
                       ),
-                      ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.r)),
-                            primary: AppColors.scaffoldBackgroundColor,
-                            fixedSize: Size(
-                                DeviceUtils.getScaledWidth(context, 1), 50.h),
-                            elevation: 5,
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            AppStrings.homePageLoginButtonText,
-                            style: AppTextStyles.homePageLoginButtonTextStyle,
-                          )),
-                      ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.r)),
-                            primary: AppColors.greenColor,
-                            fixedSize: Size(
-                                DeviceUtils.getScaledWidth(context, 1), 50.h),
-                            elevation: 0,
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            AppStrings.homePageCreateAnAccountText,
-                            style:
-                                AppTextStyles.homePageCreateAnAccountTextStyle,
-                          )),
+                      ElevatedButtonWidget(
+                        buttonText: AppStrings.homePageLoginButtonText,
+                        onPressed: () {
+                          Navigator.pushNamed(context, AppRoutes.loginPage);
+                        },
+                      ),
+                      ElevatedButtonWidget(
+                        textStyle:
+                            AppTextStyles.homePageCreateAnAccountTextStyle,
+                        elevation: 0,
+                        backgroundColor: AppColors.greenColor,
+                        buttonText: AppStrings.homePageCreateAnAccountText,
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                 ),

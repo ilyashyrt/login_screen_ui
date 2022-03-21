@@ -7,20 +7,37 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextStyles {
   static final TextStyle homePageTitleTextStyle = GoogleFonts.poppins(
-      textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp));
+    textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+  );
 
   static final TextStyle homePageSubtitleTextStyle = GoogleFonts.poppins(
-      textStyle: TextStyle(color: AppColors.blackColorWithOpacity));
+    textStyle: TextStyle(color: AppColors.blackColorWithOpacity),
+  );
 
   static final TextStyle homePageLoginButtonTextStyle = GoogleFonts.poppins(
-      textStyle: TextStyle(
-          color: AppColors.greenColor,
-          fontSize: 16.sp,
-          fontWeight: FontWeight.bold));
+    textStyle: TextStyle(
+        color: AppColors.greenColor,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.bold),
+  );
 
   static final TextStyle homePageCreateAnAccountTextStyle = GoogleFonts.poppins(
-      textStyle: TextStyle(
-          color: AppColors.scaffoldBackgroundColor,
-          fontSize: 16.sp,
-          fontWeight: FontWeight.bold));
+    textStyle: TextStyle(
+        color: AppColors.scaffoldBackgroundColor,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.bold),
+  );
+
+  static final TextStyle loginPageEmailAndPasswordTextStyle =
+      GoogleFonts.poppins(
+    textStyle: TextStyle(fontSize: 14.sp),
+  );
+
+  static final TextStyle loginPageTextFieldsHintTextStyle = GoogleFonts.poppins(
+    textStyle: TextStyle(fontSize: 15.sp),
+  );
+
+  static final TextStyle loginPageForgotPasswordTextStyle = GoogleFonts.poppins(
+    textStyle: TextStyle(color: AppColors.greenColor, fontSize: 14.sp),
+  );
 }
